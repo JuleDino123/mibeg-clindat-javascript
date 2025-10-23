@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Unit Converter</h1>
+    <label>
+        Grad
+        <input id="aInput" type="number">
+    </label>
+    
+    <label>
+        Fahrenheit
+        <input id="sumOutput" type="number">
+    </label>
+    <button>Berechne!</button>
+
+    <script>
+        const sumOutput = document.querySelector("#sumOutput");
+        const calculateSum = document.querySelector("button");
+
+        const sum = () => {
+            const a = document.querySelector("#aInput").value;
+            
+            sumOutput.value = Number(a) *1.8 +32;
+        };
+
+        calculateSum.addEventListener("click", sum);
+    </script>
+</body>
+
+</html>

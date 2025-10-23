@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Euro/USD</title>
+</head>
+
+<body>
+    <h1>Euro/USD Converter</h1>
+    <label>
+        Euro: <input id="euro" type="number" size="10">
+    </label>
+    <label>
+        USD: <input id="usd" type="number" size="10">
+    </label>
+
+    <br><br>
+
+    <lable>
+        Kurs: <input id="kurs" value="1.16" type="number" size="10">
+    </lable>
+
+
+
+    <script>
+        let k = 1.16;
+
+        const euroToUsd = e => e * k;
+        const usdToEuro = u => u / k;
+        
+
+        kurs.addEventListener(
+            "keyup",
+            (event) => {
+                k = event.target.valueAsNumber;
+            }
+        )
+        
+        euro.addEventListener(
+            "change",
+            (event) => {
+                const e = event.target.valueAsNumber;
+                usd.value = euroToUsd(e);
+            }
+        );
+
+        usd.addEventListener(
+            "change",
+            (event) => {
+                const u = event.target.valueAsNumber;
+                euro.value = usdToEuro(u);
+            }
+        );
+    </script>
+</body>
+
+</html>
